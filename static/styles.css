@@ -1,0 +1,67 @@
+*{
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "VCR OSD Mono";
+    src: url("VCR_OSD_MONO_1.001.ttf");
+}
+
+body{
+    margin: 0px;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #c2c2e5;
+    display: grid;
+    grid-template-rows: 120px auto 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.gameBoard{
+    margin-bottom: 150px;
+    width: 500px;
+    height: 500px;
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.gameBoard div{
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 100px;
+    font-family: sans-serif;
+}
+
+.gameBoard div:hover{
+    background-color: #7a7a90;
+}
+
+.gameBoard div:nth-child(3n){
+    border-right: 0px;
+}
+
+.gameBoard div:nth-child(1n + 7){
+    border-bottom: 0px;
+}
+
+.title{
+    color: #323a32;
+    font-size: 60px;
+    font-weight: bold;
+    font-family: "VCR OSD Mono";
+    justify-self: center;
+    margin-top: 20px;
+}
+
+.turnDisplay{
+    margin-top: 40px;
+    color: #323a32;
+    font-size: 30px;
+    font-family: "VCR OSD Mono";
+}
