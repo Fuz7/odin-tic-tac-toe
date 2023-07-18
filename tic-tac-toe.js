@@ -92,9 +92,8 @@ let game = (function(){
 
 
 let player = function(name,letter){
-    this.name = name
-    this.letter = letter
-    this.board = game.getGameboard()
+    
+    board = game.getGameboard()
 
     const getLetter = () => {
         return letter
@@ -106,10 +105,11 @@ let player = function(name,letter){
 
     const fillBoard = (x,y) => { 
         board[x][y] = letter;
+        console.log(letter)
     }
     
     const resetBoard = () => {
-        this.board = game.getGameboard()
+        board = game.getGameboard()
     }
 
     return { getLetter, getName, fillBoard, resetBoard }
@@ -121,7 +121,6 @@ player2 = player("Player 2",'O')
 
 let displayController = (function(){
     let turnDisplay = document.getElementById('turnDisplay')
-    let gameGrid = document.getElementById('gameBoard')
     let cells = Array.from(document.getElementsByClassName('cell'))
     let restartButton = document.getElementById('restartButton')
 
